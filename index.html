@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pod Info</title>
+    <script>
+        async function fetchPodInfo() {
+            try {
+                const response = await fetch('/api/podinfo'); // Replace with your API endpoint
+                const data = await response.json();
+                document.getElementById('pod-ip').textContent = data.ip;
+                document.getElementById('pod-name').textContent = data.name;
+            } catch (error) {
+                console.error('Error fetching pod info:', error);
+            }
+        }
+
+        window.onload = fetchPodInfo;
+    </script>
+</head>
+<body>
+    <h1>Pod Information</h1>
+    <p><strong>Pod IP Address:</strong> <span id="pod-ip">Loading...</span></p>
+    <p><strong>Pod Name:</strong> <span id="pod-name">Loading...</span></p>
+</body>
+</html>
