@@ -27,5 +27,4 @@ jobs:
       with:
         push: true
         tags: master9/test-webpage:latest
-        secrets: |
-          GIT_AUTH_TOKEN=${{ secrets.DOCKER_TOKEN }}
+        file: Dockerfile
