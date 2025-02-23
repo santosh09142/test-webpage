@@ -1,5 +1,5 @@
 # Use the official Nginx image from the Docker Hub
-FROM nginx:latest
+FROM registry.redhat.io/rhel8/nginx-120
 
 # Set a non-root user
 RUN mkdir -p /var/cache/nginx/client_temp && \
